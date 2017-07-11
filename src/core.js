@@ -173,7 +173,8 @@ export default function (defaultLibraryName) {
         },
 
         AssignmentExpression(path, { opts }) {
-          const { node, hub = {} } = path; // in some strange situation, hub is undfined, don't know why.
+          // in some strange situation, hub is undfined, don't know why.
+          const { node, hub = {} } = path;
           const { file } = hub;
 
           if (node.operator !== '=') return;
